@@ -7,7 +7,7 @@ type ListHeaderProps = {
 };
 
 function ListHeader({ title, openModal }: ListHeaderProps) {
-	const [cookies, setCookies, removeCookies] = useCookies();
+	const [cookies, , removeCookies] = useCookies();
 
 	return (
 		<div className="">
