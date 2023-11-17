@@ -30,7 +30,7 @@ function Authentication() {
 		passwordConfirmation: '',
 	};
 
-	const [cookies, setCookies] = useCookies();
+	const [, setCookies] = useCookies();
 	const [user, setUser] = useState<UserProps>(userDefault);
 	const [mode, setMode] = useState<'login' | 'signup'>('login');
 	const [isLoading, setIsLoading] = useState(false);
@@ -65,8 +65,10 @@ function Authentication() {
 		} catch (errorAxios: unknown) {
 			console.log(errorAxios);
 			const err = errorAxios as AxiosError;
+			console.log(err);
 
-			setError({ ...error, email: err?.response?.data.message });
+			// err?.response?.data.message
+			setError({ ...error, email: 'User already exist' });
 		} finally {
 			setIsLoading(false);
 		}
