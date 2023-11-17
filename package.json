@@ -1,0 +1,14 @@
+{
+	"name": "todo-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "if-env TYPE=server  && (cd server && npm install) || (cd client && npm install)",
+		"server": "nodemon ./server/server.js",
+		"start": "cd client && npm run dev"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
