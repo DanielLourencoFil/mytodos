@@ -8,7 +8,7 @@ app.use(express('json'));
 app.use(bodyParser.json());
 app.use(
 	cors({
-		origin: 'http://localhost:5173',
+		origin: ['http://localhost:5173', 'https://mytodos-h2k2.onrender.com/'],
 	})
 );
 app.use('/api/v1', routes);
