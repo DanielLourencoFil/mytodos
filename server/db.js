@@ -9,4 +9,5 @@ const pool = new Pool({
 	database: 'todoapp',
 });
 
+console.log(process.env.DB_PASSWORD);
 module.exports = pool;
