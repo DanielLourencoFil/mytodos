@@ -31,7 +31,7 @@ const signUp = async (req, res) => {
 	const { email, password } = req.body;
 	const salt = bcrypt.genSaltSync(10);
 	const hashedPassword = bcrypt.hashSync(password, salt);
-
+	console.log(hashedPassword);
 	try {
 		const result = await pool.query(
 			'INSERT INTO users(hashed_password, email) VALUES($1, $2)',
