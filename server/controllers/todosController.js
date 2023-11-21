@@ -73,9 +73,16 @@ const todosDeleteOne = async (req, res) => {
 		res.status(500).json({ message: 'Internal Server Error' });
 	}
 };
+
+const test = async (req, res) => {
+	const result = await pool.query('SELECT now()');
+	return res.send(result.rows[0]);
+	// return res.send('hello');
+};
 module.exports = {
 	todosGetAll,
 	todosUpdateOne,
 	todosCreateOne,
 	todosDeleteOne,
+	test,
 };

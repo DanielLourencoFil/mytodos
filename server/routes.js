@@ -7,6 +7,7 @@ const {
 	todosUpdateOne,
 	todosCreateOne,
 	todosDeleteOne,
+	test,
 } = require('./controllers/todosController');
 
 // ROUTES for AUTHENTICATION
@@ -14,6 +15,7 @@ router.post('/login', logIn);
 router.post('/signup', signUp);
 
 // ROUTES for todos CRUD
+router.get('/todos/ping', test);
 router.get('/todos/:userEmail', todosGetAll);
 router.put('/todos/:id', todosUpdateOne);
 router.post('/todos', todosCreateOne);
